@@ -1,6 +1,6 @@
 # Nodens Application Template
 
-A minimal C++23 application template using [Nodens](https://github.com/EldritchCodex/Nodens).
+A minimal C++23 application template using [Nodens](https://github.com/eldritch-codex/nodens).
 
 > ⚠️ The published development environment currently builds and validates Nodens applications for Linux only. Native Windows and macOS builds are not currently supported or validated.
 
