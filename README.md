@@ -14,7 +14,7 @@ Install Docker and an editor with Dev Container support:
 This template uses the published Linux graphics image:
 
 ```text
-ghcr.io/eldritchcodex/arch-dev:main
+ghcr.io/eldritch-codex/arch-dev:main
 ```
 
 The included `.devcontainer/devcontainer.json` uses NVIDIA by default with
@@ -34,11 +34,14 @@ For Intel/AMD, comment the NVIDIA `runArgs` and uncomment the `/dev/dri`,
 5. Configure, build, and run the application:
 
    ```shell
-   cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Debug
+   cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Debug \
+       -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++
    cmake --build build --target NodensApp
    ./build/NodensApp
    ```
 
+Nodens builds with Clang. The container's default compiler is GCC, which does not build it, so name Clang when you configure.
+
 The first CMake configuration downloads Nodens and its dependencies with `FetchContent`. You do not need to clone or build the Nodens repository separately.
 
-For reproducible builds, replace `GIT_TAG dev` in `CMakeLists.txt` with a specific Nodens commit hash. The `dev` branch tracks ongoing development and may change without notice.
+This template uses Nodens [0.1.0](https://github.com/eldritch-codex/nodens/releases/tag/v0.1.0), pinned by `GIT_TAG v0.1.0` in `CMakeLists.txt`, so every build gets the same Nodens. While Nodens is at 0.x, a release that changes the API bumps the minor version. To upgrade, change the tag to a newer release and rebuild. To follow unreleased work, use a Nodens commit hash from `main` instead of a tag.

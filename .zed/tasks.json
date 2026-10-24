@@ -1,7 +1,7 @@
 // See https://zed.dev/docs/tasks for documentation.
 [
   {
-    "label": "CMake: Config Debug (Clang/Ninja)",
+    "label": "NodensApp CMake: Config Debug (Clang/Ninja)",
     "command": "cmake",
     "args": [
       "-G",
@@ -26,7 +26,7 @@
     "save": "none",
   },
   {
-    "label": "CMake: Config Release (Clang/Ninja)",
+    "label": "NodensApp CMake: Config Release (Clang/Ninja)",
     "command": "cmake",
     "args": [
       "-G",
@@ -51,7 +51,7 @@
     "save": "none",
   },
   {
-    "label": "CMake: Build",
+    "label": "NodensApp CMake: Build",
     "command": "cmake --build build",
     "use_new_terminal": false,
     "allow_concurrent_runs": false,
@@ -64,7 +64,7 @@
     "save": "none",
   },
   {
-    "label": "CMake: Build Clean",
+    "label": "NodensApp CMake: Build Clean",
     "command": "cmake --build build --clean-first",
     "use_new_terminal": false,
     "allow_concurrent_runs": false,

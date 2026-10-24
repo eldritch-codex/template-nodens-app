@@ -15,8 +15,8 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 include(FetchContent)
 
 FetchContent_Declare(nodens
-    GIT_REPOSITORY https://github.com/EldritchCodex/Nodens.git
-    GIT_TAG        dev # Pin a specific commit for reproducible builds
+    GIT_REPOSITORY https://github.com/eldritch-codex/nodens.git
+    GIT_TAG        v0.1.0 # A release tag; change it to move to a newer Nodens release
 )
 FetchContent_MakeAvailable(nodens)
 
