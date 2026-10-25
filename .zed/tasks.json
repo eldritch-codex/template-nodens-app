@@ -1,19 +1,14 @@
 // See https://zed.dev/docs/tasks for documentation.
 [
   {
-    "label": "NodensApp CMake: Config Debug (Clang/Ninja)",
+    "label": "NodensApp CMake: Config Debug",
     "command": "cmake",
     "args": [
-      "-G",
-      "Ninja",
       "-B",
       "build",
       "-S",
       ".",
-      "-DCMAKE_C_COMPILER=clang",
-      "-DCMAKE_CXX_COMPILER=clang++",
       "-DCMAKE_BUILD_TYPE=Debug",
-      "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON",
     ],
     "use_new_terminal": false,
     "allow_concurrent_runs": false,
@@ -26,19 +21,14 @@
     "save": "none",
   },
   {
-    "label": "NodensApp CMake: Config Release (Clang/Ninja)",
+    "label": "NodensApp CMake: Config Release",
     "command": "cmake",
     "args": [
-      "-G",
-      "Ninja",
       "-B",
       "build",
       "-S",
       ".",
-      "-DCMAKE_C_COMPILER=clang",
-      "-DCMAKE_CXX_COMPILER=clang++",
       "-DCMAKE_BUILD_TYPE=Release",
-      "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON",
     ],
     "use_new_terminal": false,
     "allow_concurrent_runs": false,
