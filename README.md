@@ -17,13 +17,15 @@ This template uses the published Linux graphics image:
 ghcr.io/eldritch-codex/arch-dev:main
 ```
 
-The included `.devcontainer/devcontainer.json` uses NVIDIA by default with
-`--gpus=all`. NVIDIA hosts need a working host driver and NVIDIA Container
-Toolkit configured in Docker. See the [NVIDIA Container Toolkit installation
-guide](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html).
+The template has two Dev Container configurations, and your editor asks which
+to open:
 
-For Intel/AMD, comment the NVIDIA `runArgs` and uncomment the `/dev/dri`,
-`video`, and `render` arguments. Keep exactly one `runArgs` block active.
+- `.devcontainer/nvidia/` for NVIDIA GPUs, using `--gpus=all`. The host needs a
+  working driver and NVIDIA Container Toolkit configured in Docker. See the
+  [NVIDIA Container Toolkit installation
+  guide](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html).
+- `.devcontainer/dri/` for Intel and AMD GPUs, using `/dev/dri` and the `video`
+  and `render` groups.
 
 ## Getting Started
 
@@ -34,13 +36,12 @@ For Intel/AMD, comment the NVIDIA `runArgs` and uncomment the `/dev/dri`,
 5. Configure, build, and run the application:
 
    ```shell
-   cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Debug \
-       -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++
+   cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Debug
    cmake --build build --target NodensApp
    ./build/NodensApp
    ```
 
-Nodens builds with Clang. The container's default compiler is GCC, which does not build it, so name Clang when you configure.
+The container's default compiler is Clang, which Nodens requires.
 
 The first CMake configuration downloads Nodens and its dependencies with `FetchContent`. You do not need to clone or build the Nodens repository separately.
 
