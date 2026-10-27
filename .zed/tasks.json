@@ -10,6 +10,7 @@
       ".",
       "-DCMAKE_BUILD_TYPE=Debug",
     ],
+    "cwd": "$ZED_MAIN_GIT_WORKTREE",
     "use_new_terminal": false,
     "allow_concurrent_runs": false,
     "reveal": "always",
@@ -30,6 +31,7 @@
       ".",
       "-DCMAKE_BUILD_TYPE=Release",
     ],
+    "cwd": "$ZED_MAIN_GIT_WORKTREE",
     "use_new_terminal": false,
     "allow_concurrent_runs": false,
     "reveal": "always",
@@ -43,6 +45,7 @@
   {
     "label": "NodensApp CMake: Build",
     "command": "cmake --build build",
+    "cwd": "$ZED_MAIN_GIT_WORKTREE",
     "use_new_terminal": false,
     "allow_concurrent_runs": false,
     "reveal": "always",
@@ -56,6 +59,7 @@
   {
     "label": "NodensApp CMake: Build Clean",
     "command": "cmake --build build --clean-first",
+    "cwd": "$ZED_MAIN_GIT_WORKTREE",
     "use_new_terminal": false,
     "allow_concurrent_runs": false,
     "reveal": "always",
