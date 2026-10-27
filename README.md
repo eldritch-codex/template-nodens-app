@@ -2,6 +2,8 @@
 
 A minimal C++23 application template using [Nodens](https://github.com/eldritch-codex/nodens).
 
+This template uses Nodens [0.1.1](https://github.com/eldritch-codex/nodens/releases/tag/v0.1.1).
+
 > ⚠️ The published development environment currently builds and validates Nodens applications for Linux only. Native Windows and macOS builds are not currently supported or validated.
 
 ## Prerequisites
@@ -45,4 +47,4 @@ The container's default compiler is Clang, which Nodens requires.
 
 The first CMake configuration downloads Nodens and its dependencies with `FetchContent`. You do not need to clone or build the Nodens repository separately.
 
-This template uses Nodens [0.1.1](https://github.com/eldritch-codex/nodens/releases/tag/v0.1.1), pinned by `GIT_TAG v0.1.1` in `CMakeLists.txt`, so every build gets the same Nodens. While Nodens is at 0.x, a release that changes the API bumps the minor version. To upgrade, change the tag to a newer release and rebuild. To follow unreleased work, use a Nodens commit hash from `main` instead of a tag.
+The Nodens version is pinned by `GIT_TAG` in `CMakeLists.txt`, so every build gets the same Nodens. While Nodens is at 0.x, a release that changes the API bumps the minor version. To upgrade, change the tag to a newer release and rebuild. To follow unreleased work, use a Nodens commit hash from `main` instead of a tag.
