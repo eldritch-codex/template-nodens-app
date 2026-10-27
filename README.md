@@ -45,4 +45,4 @@ The container's default compiler is Clang, which Nodens requires.
 
 The first CMake configuration downloads Nodens and its dependencies with `FetchContent`. You do not need to clone or build the Nodens repository separately.
 
-This template uses Nodens [0.1.0](https://github.com/eldritch-codex/nodens/releases/tag/v0.1.0), pinned by `GIT_TAG v0.1.0` in `CMakeLists.txt`, so every build gets the same Nodens. While Nodens is at 0.x, a release that changes the API bumps the minor version. To upgrade, change the tag to a newer release and rebuild. To follow unreleased work, use a Nodens commit hash from `main` instead of a tag.
+This template uses Nodens [0.1.1](https://github.com/eldritch-codex/nodens/releases/tag/v0.1.1), pinned by `GIT_TAG v0.1.1` in `CMakeLists.txt`, so every build gets the same Nodens. While Nodens is at 0.x, a release that changes the API bumps the minor version. To upgrade, change the tag to a newer release and rebuild. To follow unreleased work, use a Nodens commit hash from `main` instead of a tag.
