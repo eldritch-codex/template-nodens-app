@@ -1,12 +1,36 @@
-# Nodens Application Template
+<h1 align="center">Nodens Application Template</h1>
 
-A minimal C++23 application template using [Nodens](https://github.com/eldritch-codex/nodens).
+<h3 align="center">A minimal C++23 application template for the Nodens framework.</h3>
 
-This template uses Nodens [0.1.1](https://github.com/eldritch-codex/nodens/releases/tag/v0.1.1).
+<p align="center">
+  <a href="https://github.com/eldritch-codex/nodens/releases/tag/v0.2.0"><img src="https://img.shields.io/badge/Nodens-0.2.0-blue?style=flat-square" alt="Nodens 0.2.0"></a>
+  <img src="https://img.shields.io/badge/C%2B%2B-23-blue?style=flat-square" alt="C++23">
+  <img src="https://img.shields.io/badge/CMake-3.30-blue?style=flat-square" alt="CMake 3.30">
+  <img src="https://img.shields.io/badge/platform-Linux-blue?style=flat-square" alt="Platform: Linux">
+  <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-yellow?style=flat-square" alt="License: MIT"></a>
+</p>
 
-> ⚠️ The published development environment currently builds and validates Nodens applications for Linux only. Native Windows and macOS builds are not currently supported or validated.
+<p align="center">
+  <a href="https://github.com/eldritch-codex/nodens/wiki/Getting-Started">Getting Started</a> ·
+  <a href="https://github.com/eldritch-codex/nodens/wiki">Wiki</a> ·
+  <a href="https://github.com/eldritch-codex/nodens">Nodens</a>
+</p>
 
-## Prerequisites
+> **Status:** the template builds against Nodens 0.2.0. Nodens is experimental, and a breaking change bumps its minor version.
+>
+> **Limitations:** the published development environment builds and validates Nodens applications for Linux only. Native Windows and macOS builds are not supported or validated.
+
+## Introduction
+
+A minimal application that uses [Nodens](https://github.com/eldritch-codex/nodens). On GitHub, select **Use this template** to create your own repository, then build and run it in the development environment below. The template fetches Nodens with CMake `FetchContent`, so you do not need to clone or build the Nodens repository separately.
+
+## Nodens version
+
+The Nodens version is pinned by `GIT_TAG` in `CMakeLists.txt`, so every build gets the same Nodens. While Nodens is at 0.x, a release that changes the API bumps the minor version. To upgrade, change the tag to a newer release and rebuild. To follow unreleased work, use a Nodens commit hash from `main` instead of a tag.
+
+## Development environment
+
+### Prerequisites
 
 Install Docker and an editor with Dev Container support:
 
@@ -29,7 +53,7 @@ to open:
 - `.devcontainer/dri/` for Intel and AMD GPUs, using `/dev/dri` and the `video`
   and `render` groups.
 
-## Getting Started
+### Getting started
 
 1. Create a repository from this template or clone it locally.
 2. Open the project folder in Zed or Visual Studio Code.
@@ -43,8 +67,22 @@ to open:
    ./build/NodensApp
    ```
 
-The container's default compiler is Clang, which Nodens requires.
+The container's default compiler is Clang, which Nodens requires. The first CMake configuration downloads Nodens and its dependencies.
 
-The first CMake configuration downloads Nodens and its dependencies with `FetchContent`. You do not need to clone or build the Nodens repository separately.
+### Zed on the host
 
-The Nodens version is pinned by `GIT_TAG` in `CMakeLists.txt`, so every build gets the same Nodens. While Nodens is at 0.x, a release that changes the API bumps the minor version. To upgrade, change the tag to a newer release and rebuild. To follow unreleased work, use a Nodens commit hash from `main` instead of a tag.
+If Zed runs outside the container, `.zed/tasks.json` and `.zed/debug.json` run the build and the debugger inside it with the [Dev Containers CLI](https://github.com/devcontainers/cli):
+
+```shell
+npm install -g @devcontainers/cli
+```
+
+Run the **Docker: Start** task once, then use the Build, Run and debug tasks. They use the NVIDIA configuration. On Intel or AMD, replace `nvidia` with `dri` in `.zed/tasks.json`, `.zed/debug.json` and `.zed/settings.json`. The debugger needs CodeLLDB in the container image (`/opt/codelldb`).
+
+## Acknowledgements
+
+In September 2026 I started experimenting with LLM coding agents (Claude Code, ZedAI and Pi) and even decided to develop my own: [Armitage](https://eldritchcodex.com/armitage/). I use them mostly to learn new stuff, but also they help with documentation, CI/CD and general project upkeep. Commits carry no co-author or AI attribution trailers, since I am responsible for every commit.
+
+## License
+
+Copyright (c) 2026 EldritchCodex. The project and its entire history are licensed under the MIT License.
