@@ -1,0 +1,24 @@
+{
+  "dap": {
+    "CodeLLDB": {
+      "binary": "devcontainer",
+      "args": [
+        "exec",
+        "--workspace-folder", ".",
+        "--config", ".devcontainer/nvidia/devcontainer.json",
+        "/opt/codelldb/adapter/codelldb"
+      ]
+    }
+  },
+  "lsp": {
+    "clangd": {
+      "binary": {
+        "arguments": [
+          "--experimental-modules-support",
+          "--compile-commands-dir=build",
+          "--header-insertion=never"
+        ]
+      }
+    }
+  }
+}

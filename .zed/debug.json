@@ -1,0 +1,27 @@
+// Project-local debug scenarios.
+//
+// Zed runs on the host; the CodeLLDB adapter runs inside the Docker container
+// (see settings.json) and talks to Zed over stdio.
+//
+// For more documentation on how to configure debug scenarios,
+// see: https://zed.dev/docs/debugger
+[
+    {
+        "label": "Debug NodensApp (Docker)",
+        "adapter": "CodeLLDB",
+        "request": "launch",
+        "build": {
+            "command": "bash",
+            "args": [
+                "-c",
+                "devcontainer up --workspace-folder . --config .devcontainer/nvidia/devcontainer.json && devcontainer exec --workspace-folder . --config .devcontainer/nvidia/devcontainer.json cmake --build build",
+            ],
+            "cwd": "$ZED_MAIN_GIT_WORKTREE",
+        },
+        "program": "$ZED_MAIN_GIT_WORKTREE/build/NodensApp",
+        "cwd": "$ZED_MAIN_GIT_WORKTREE",
+        "args": [],
+        "env": {},
+        "stopOnEntry": false,
+    },
+]
