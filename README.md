@@ -11,8 +11,8 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/eldritch-codex/nodens/wiki/Getting-Started">Getting Started</a> ·
-  <a href="https://github.com/eldritch-codex/nodens/wiki">Wiki</a> ·
+  <a href="https://github.com/eldritch-codex/nodens/blob/main/docs/guide/getting-started.md">Getting Started</a> ·
+  <a href="https://github.com/eldritch-codex/nodens/blob/main/docs/guide/README.md">Guide</a> ·
   <a href="https://github.com/eldritch-codex/nodens">Nodens</a>
 </p>
 
