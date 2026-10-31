@@ -3,7 +3,7 @@
 <h3 align="center">A minimal C++23 application template for the Nodens framework.</h3>
 
 <p align="center">
-  <a href="https://github.com/eldritch-codex/nodens/releases/tag/v0.2.0"><img src="https://img.shields.io/badge/Nodens-0.2.0-blue?style=flat-square" alt="Nodens 0.2.0"></a>
+  <a href="https://github.com/eldritch-codex/nodens/releases/tag/v0.3.0"><img src="https://img.shields.io/badge/Nodens-0.3.0-blue?style=flat-square" alt="Nodens 0.3.0"></a>
   <img src="https://img.shields.io/badge/C%2B%2B-23-blue?style=flat-square" alt="C++23">
   <img src="https://img.shields.io/badge/CMake-3.30-blue?style=flat-square" alt="CMake 3.30">
   <img src="https://img.shields.io/badge/platform-Linux-blue?style=flat-square" alt="Platform: Linux">
@@ -16,7 +16,7 @@
   <a href="https://github.com/eldritch-codex/nodens">Nodens</a>
 </p>
 
-> **Status:** the template builds against Nodens 0.2.0. Nodens is experimental, and a breaking change bumps its minor version.
+> **Status:** the template builds against Nodens 0.3.0. Nodens is experimental, and a breaking change bumps its minor version.
 >
 > **Limitations:** the published development environment builds and validates Nodens applications for Linux only. Native Windows and macOS builds are not supported or validated.
 
